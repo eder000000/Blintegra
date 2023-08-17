@@ -59,6 +59,40 @@ h6 {
   color: #fff;
 }
 
+
+
+/*--------------------------------------------------------------
+# Back to previous
+--------------------------------------------------------------*/
+.back-to-previous {
+  position: fixed;
+  display: none;
+  left: 20px;
+  bottom: 15px;
+  z-index: 9999;
+}
+
+.back-to-previous i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  background: #522E6D;
+  color: #fff;
+  transition: all 0.4s;
+}
+
+.back-to-previous i:hover {
+  background: #9568b8;
+  color: #fff;
+}
+
+
+
+
 /*--------------------------------------------------------------
 # Disable AOS delay on mobile
 --------------------------------------------------------------*/
@@ -527,15 +561,30 @@ section {
 
 .section-title {
   text-align: center;
-  padding-bottom: 30px;
+  align-items: center;
+  padding-bottom: 10px;
 }
 
 .section-title h2 {
   font-size: 32px;
   font-weight: bold;
   text-transform: uppercase;
-  position: relative;
   color: #2a3767;
+  margin-top: 5px;
+}
+
+.section-title .subtitle {
+  text-align: center;
+  align-items: center;
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #2a3767;
+  margin-top: 5px;
+}
+
+.section-title img{
+  align-items: center;
 }
 
 .section-title h2::before,
@@ -543,7 +592,6 @@ section {
   content: '';
   width: 50px;
   height: 2px;
-  background: #522E6D;
   display: inline-block;
 }
 
@@ -560,6 +608,55 @@ section {
   margin: 15px 0 0 0;
 }
 
+.section-title .description p {
+  text-align: justify;
+}
+
+
+
+
+@media (max-width: 768px) {
+  .section-title .subtitle {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #2a3767;
+  }
+
+  .section-title .subtitle-one-line {
+    align-items: center;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #2a3767;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .section-title .subtitle {
+    display: flex;
+    align-items: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #2a3767;
+  }
+
+  .section-title .subtitle-one-line {
+    align-items: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #2a3767;
+  }
+}
 /*--------------------------------------------------------------
 # Clients
 --------------------------------------------------------------*/
@@ -703,12 +800,15 @@ section {
 }
 
 .counts img{
-  margin: 30px;
+  margin: 50px;
+  width: 259px;
+  height: 256px;
 }
 
 .counts .content .count-box {
-  padding: 20px 0;
+  padding: 20px 20px;
   width: 100%;
+  margin-bottom: 15px;
 }
 
 .counts .content .count-box i {
@@ -771,6 +871,19 @@ section {
 # Services
 --------------------------------------------------------------*/
 .services .icon-box {
+  color: #2a3767;
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.12);
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+  z-index: 1;
+  min-width: 200px;
+}
+
+.counts .count-box {
   color: #2a3767;
   padding: 30px;
   position: relative;
@@ -901,7 +1014,7 @@ poliza-img {
   line-height: 28px;
   margin-top: 10px;
   margin-bottom: 40px;
-  text-align: center;
+  text-align: justify;
 }
 
 
@@ -1429,8 +1542,13 @@ poliza-img {
 # F.A.Q
 --------------------------------------------------------------*/
 .faq .faq-item {
-  margin: 20px 0;
-  padding: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-left: 15px;
+  margin-right: 15px;
+  padding: 5px 0;
   border-bottom: 1px solid #eeeeee;
 }
 
@@ -1444,15 +1562,18 @@ poliza-img {
 }
 
 .faq .faq-item h4 {
+  max-width: 900;
+  align-items: center;
   font-size: 16px;
   line-height: 26px;
   font-weight: 500;
-  margin: 0 0 10px 32px;
-  font-family: "Poppins", sans-serif;
+text-align: justify;
 }
+
 
 .faq .faq-item p {
   font-size: 15px;
+  text-align: justify;
 }
 
 
@@ -1496,6 +1617,10 @@ poliza-img {
   font-size: 15px;
 }
 
+.content-section img {
+  margin-bottom: 30px;
+}
+
 
 *-------------------Button style
 ---------------------------------*/
@@ -1524,16 +1649,135 @@ poliza-img {
 --------------------------------------------------------------*/
 
 .content-section-inside  h2 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 
   margin-top: 35px;
   margin-bottom: 10px;
   text-align: center;
+  align-items: center;
 }
 
 
 .content-section-inside  img {
   margin-bottom: 20px;
+  align-items: center;
 }
+
+
+.services .container-services{
+  background-color: #253C58;
+}
+
+
+.services .icon-box{
+  margin-bottom: 20px;
+}
+
+
+.container-services .section-title h2{
+  margin-top: 20px;
+  color: whitesmoke;
+}
+
+.container-services .description p{
+  margin-top: 20px;
+}
+
+.container-services .icon-box{
+  margin-bottom: 20px;
+}
+
+
+.content-section-title  h2 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.content-section-title  {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+
+.content-section-title .section-point h2{
+  margin-top: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.content-section-title .container {
+  margin-bottom: 5px;
+}
+
+
+.faq-desc h4 {
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 500;
+  text-align: justify;
+  margin-bottom: 10px;
+  margin-top: 10px;
+
+}
+
+@media (max-width: 575px) {
+  .content-section-title h2 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  }
+
+@media (min-width: 576px) {
+  .content-section-title h2 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  }
+
+  
+
+@media (min-width: 576px) {
+.content-section-title h2 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 600;
+}
+}
+
+@media (min-width: 768px) {
+.content-section-title h2{
+   font-size: 24px;
+   font-weight: 600;
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   text-align: justify;
+}
+}
+
+
 
 /*--------------------------------------------------------------
 # Content-dark
@@ -2204,6 +2448,11 @@ poliza-img {
   margin: 0;
 }
 
+.requirements .requirements-item li {
+  list-style: none;
+  text-align: justify;
+}
+
 .requirements span {
   margin: 10px;
   color: #522E6D;
@@ -2493,3 +2742,684 @@ figure.effect-milo:hover h2 {
 	letter-spacing: 1px;
 	font-size: 68.5%;
 }
+
+
+a/*--------------------------------------------------------------
+# Goverment  
+--------------------------------------------------------------*/
+
+.goverment .simple-list {
+  list-style: none;
+}
+
+.goverment .icon-box {
+  color: #2a3767;
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.12);
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+  z-index: 1;
+  min-width: 200px;
+}
+
+.goverment .poliza-section {
+  font-size: 20px;
+  line-height: 28px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+
+.goverment .icon i {
+  font-size: 36px;
+  line-height: 1;
+  color: #fff;
+}
+
+.goverment .title {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.goverment .title a {
+  color: #2a3767;
+  margin-bottom: 30px;
+}
+
+
+.goverment .title-poliza {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 22px;
+}
+
+.goverment .description {
+  font-size: 15px;
+  line-height: 28px;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.goverment .goverment-section {
+  font-size: 15px;
+  line-height: 28px;
+  margin-bottom: 0;
+  text-align: justify;
+}
+
+
+.goverment-image {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+
+@media (min-width: 576px) {
+  .goverment .goverment-section {
+   font-size: 18px;
+   text-align: justify;
+}
+
+  .goverment .title-poliza {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 26px;
+}
+
+}
+
+@media (min-width: 768px) {
+  .goverment .goverment-section {
+   font-size: 20px;
+   text-align: justify;
+}
+
+  .goverment .title-poliza {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 28px;
+}
+
+}
+
+
+
+
+/*--------------------------------------------------------------
+# contrataciones
+--------------------------------------------------------------*/
+.contrataciones .contrataciones-item {
+  margin: 20px 0;
+  padding: 20px 0;
+  border-bottom: 1px solid #eeeeee;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.contrataciones .contrataciones-item i {
+  color: #8bc4ea;
+  font-size: 24px;
+  float: left;
+  line-height: 0;
+  padding: 13px 0 0 0;
+  margin: 0;
+}
+
+.contrataciones .contrataciones-item h4 {
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 500;
+  margin: 0 0 10px 32px;
+
+}
+
+.contrataciones .contrataciones-item p {
+  font-size: 18px;
+  line-height: 28px;
+  margin-bottom: 0;
+  text-align: justify;
+}
+
+
+
+
+.services-image {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+/* .services .services-image {
+  margin: 0 auto 20px auto;
+  padding-top: 10px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  background: white;
+  transition: all 0.3s ease-in-out;
+} */
+
+
+.topic .icon-box {
+  color: white;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  position: relative;
+  overflow: hidden;
+  background: #522E6D;
+  opacity: .6; 
+  box-shadow: 0 0 29px 0 #a187b4;
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+  z-index: 1;
+  min-width: 200px;
+  margin-bottom: 20px;
+}
+
+.topic hr{
+  display: block;
+  border: none;
+  height: 3px;
+  background-color:#a187b4;
+  margin: 0px;
+}
+
+.topic .icon {
+  margin: 0 auto 20px auto;
+  padding-top: 10px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  background: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.topic .icon i {
+  font-size: 36px;
+  line-height: 1;
+  color: #fff;
+}
+
+
+
+.topic h4{
+  color: white;
+  text-align: center;
+  font-weight: 400;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 22px;
+}
+
+.topic .title a {
+  color: #2a3767;
+  margin-bottom: 30px;
+}
+
+.topic .description {
+  font-size: 15px;
+  line-height: 28px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  text-align: justify;
+}
+
+.topic .section-title {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.topic .topic-image {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.labor-services .icon-box {
+  color: #2a3767;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  position: relative;
+  overflow: hidden;
+  background: #e6e5e5;;
+  opacity: .6; 
+  box-shadow: 0 0 10px 0 #cfcfcf;
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+  z-index: 1;
+  min-width: 200px;
+  margin-bottom: 20px;
+}
+
+.labor-services hr{
+  display: block;
+  border: none;
+  height: 3px;
+  background-color:#979595;
+  margin: 0px;
+}
+
+.labor-services h4{
+  color: black;
+  text-align: justify;
+  font-weight: 500;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 16px;
+}
+
+
+.topic-box .icon-box {
+  color: white;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  position: relative;
+  overflow: hidden;
+  background: #522E6D;
+  opacity: .6; 
+  box-shadow: 0 0 29px 0 #a187b4;
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+  z-index: 1;
+  width: 500px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.topic-box .icon i {
+  font-size: 36px;
+  line-height: 1;
+  color: #fff;
+}
+
+.topic-box .topic-image {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.topic-box p {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/*--------------------------------------------------------------
+# Pricing
+--------------------------------------------------------------*/
+.pricing-labor .box {
+  padding: 20px;
+  background: #f9f9f9;
+  text-align: center;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #f9f9f9;
+}
+
+.pricing-labor .box h3 {
+  font-weight: 400;
+  padding: 15px;
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #222222;
+}
+
+.pricing-labor .box h4 {
+  font-size: 42px;
+  color: #3498db;
+  font-weight: 500;
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 20px;
+}
+
+.pricing-labor .box h4 sup {
+  font-size: 20px;
+  top: -15px;
+  left: -3px;
+}
+
+.pricing-labor .box h4 span {
+  color: #bababa;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.pricing-labor .box ul {
+  padding: 0;
+  list-style: none;
+  color: #222222;
+  text-align: center;
+  line-height: 20px;
+  font-size: 14px;
+}
+
+.pricing-labor .box ul li {
+  padding-bottom: 16px;
+}
+
+.pricing-labor .box ul i {
+  color: #3498db;
+  font-size: 18px;
+  padding-right: 4px;
+}
+
+.pricing-labor .box ul .na {
+  color: #ccc;
+  text-decoration: line-through;
+}
+
+.pricing-labor .box .btn-wrap {
+  padding: 15px;
+  text-align: center;
+}
+
+.pricing-labor .box .btn-buy {
+  display: inline-block;
+  padding: 10px 40px 12px 40px;
+  border-radius: 50px;
+  border: 2px solid #3498db;
+  color: #3498db;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+
+
+.pricing-labor .box .btn-buy:hover {
+  background: #3498db;
+  color: #fff;
+}
+
+.pricing-labor .recommended {
+  border-color: #3498db;
+}
+
+.pricing-labor .recommended .btn-buy {
+  background: #3498db;
+  color: #fff;
+}
+
+.pricing-labor .recommended .btn-buy:hover {
+  background: #2383c4;
+  border-color: #2383c4;
+}
+
+.pricing-labor .table th {
+  /*   background: #3498db;
+  color: #fff; */
+  color: #253C58;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 15px;
+  text-transform: uppercase;
+}
+
+.pricing-labor .table td {
+  color: #522E6D;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+
+
+/*--------------------------------------------------------------
+# consumer
+--------------------------------------------------------------*/
+.pricing-consumer .box {
+  padding: 20px;
+  background: #f9f9f9;
+  text-align: center;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #f9f9f9;
+}
+
+
+
+.pricing-consumer .box ul {
+  padding: 0;
+  list-style: none;
+  color: #222222;
+  text-align: center;
+  line-height: 20px;
+  font-size: 14px;
+}
+
+.pricing-consumer .box ul li {
+  padding-bottom: 16px;
+}
+
+.pricing-consumer .box ul i {
+  color: #3498db;
+  font-size: 18px;
+  padding-right: 4px;
+}
+
+.pricing-consumer .box ul .na {
+  color: #ccc;
+  text-decoration: line-through;
+}
+
+
+.pricing-consumer .table th {
+  /*   background: #3498db;
+  color: #fff; */
+  color: #253C58;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 20px 25px;
+}
+
+.pricing-consumer i{
+ margin-right: 15px;
+}
+
+.pricing-consumer .table td {
+  color: #522E6D;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+
+
+/*--------------------------------------------------------------
+# laboral
+--------------------------------------------------------------*/
+.pricing-laboral .box {
+  padding: 20px;
+  background: #f9f9f9;
+  text-align: center;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #f9f9f9;
+}
+
+
+
+.pricing-laboral .box ul {
+  padding: 0;
+  list-style: none;
+  color: #222222;
+  text-align: center;
+  line-height: 20px;
+  font-size: 14px;
+}
+
+.pricing-laboral .box ul li {
+  padding-bottom: 16px;
+}
+
+.pricing-laboral .box ul i {
+  color: #3498db;
+  font-size: 18px;
+  padding-right: 4px;
+}
+
+.pricing-laboral .box ul .na {
+  color: #ccc;
+  text-decoration: line-through;
+}
+
+
+.pricing-laboral .table th {
+  /*   background: #3498db;
+  color: #fff; */
+  color: #253C58;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 20px 25px;
+  line-height: 30px;
+}
+
+.pricing-laboral i{
+ margin-right: 15px;
+}
+
+.pricing-laboral .table td {
+  color: #522E6D;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* 
+
+.btn {
+  width:220px;
+  height:65px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background-color:#fff;
+  font-size:20px;
+  font-weight:700;
+  border:1px solid rgba(0,0,0,.2);
+  box-shadow:0 4px 15px rgba(0,0,0,.2);
+  cursor:pointer;
+  transition:.3s all;
+  outline:0
+}
+.btn_white {
+  background-color:#fff
+}
+.btn_dark {
+  background-color:#303030;
+  color:#fff;
+  border:none
+}
+.btn_min {
+  height:50px
+}
+.btn:hover {
+  box-shadow:0 4px 30px rgba(0,0,0,.3)
+}
+
+.modal {
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:1050;
+  display:none;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  background-color:rgba(0,0,0,.5)
+}
+.modal__dialog {
+  max-width:500px;
+  margin:40px auto
+}
+.modal__content {
+  position:relative;
+  width:100%;
+  padding:40px;
+  background-color:#fff;
+  border:1px solid rgba(0,0,0,.2);
+  border-radius:4px;
+  max-height:80vh;
+  overflow-y:auto
+}
+.modal__close {
+  position:absolute;
+  top:8px;
+  right:14px;
+  font-size:30px;
+  color:#000;
+  opacity:.5;
+  font-weight:700;
+  border:none;
+  background-color:transparent;
+  cursor:pointer
+}
+.modal__title {
+  text-align:center;
+  font-size:22px;
+  text-transform:uppercase
+}
+.modal__input {
+  display:block;
+  margin:20px auto 20px auto;
+  width:280px;
+  height:50px;
+  background:#fff;
+  box-shadow:0 4px 15px rgba(0,0,0,.2);
+  border:none;
+  font-size:18px;
+  text-align:center;
+  padding:0 20px;
+  outline:0
+}
+.modal .btn {
+  display:block;
+  width:280px;
+  margin:0 auto
+}
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+} */
